@@ -6,7 +6,7 @@ import { validate } from './env.validation';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: `.env.${process.env.NODE_ENV || 'development'} `,
+      envFilePath: `.env`.trim(),
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
       validationSchema: Joi.object({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
@@ -16,9 +16,15 @@ import { validate } from './env.validation';
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           .default('development'),
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-        PORT: Joi.number().default(30000),
+        PORT: Joi.number().port().default(3000),
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-        MONGO_URI: Joi.string().required(),
+        MONGO_URI: Joi.string()
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          .uri()
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          .required()
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          .description('MongoDB connection string'),
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         JWT_SECRET: Joi.string().required(),
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access

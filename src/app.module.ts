@@ -8,7 +8,13 @@ import { UsersModule } from './modules/users/users.module';
 import { RestaurantsModule } from './modules/restaurants/restaurants.module';
 
 @Module({
-  imports: [CustomConfigModule, DatabaseModule, AuthModule, UsersModule, RestaurantsModule],
+  imports: [
+    CustomConfigModule,
+    DatabaseModule,
+    AuthModule,
+    UsersModule,
+    RestaurantsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

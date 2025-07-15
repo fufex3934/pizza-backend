@@ -68,7 +68,8 @@ export class AuthService {
       userId: user._id.toString(),
       email: user.email,
       type: user.type,
-      restaurantId: user.restaurantId ? user.restaurantId.toString() : '',
+      restaurantId: user.restaurantId ? user.restaurantId.toString() : null,
+      permissions: user.permissions || {},
     };
     return {
       accessToken: this.jwtService.sign(payload, {

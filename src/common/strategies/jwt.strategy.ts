@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import { TokenPayload } from '../interfaces/token-payload.interface';
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(private readonly configService: ConfigService) {
+  constructor(private configService: ConfigService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
@@ -18,6 +18,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       email: payload.email,
       type: payload.type,
       restaurantId: payload.restaurantId,
+      permissions: payload.permissions || {},
     };
   }
 }

@@ -38,6 +38,7 @@ export class AuthService {
       ...registerDto,
       password: hashedPassword,
     });
+    await user.save();
     return this.generateToken(user);
   }
 

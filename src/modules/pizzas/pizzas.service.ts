@@ -45,7 +45,7 @@ export class PizzasService {
     return pizza;
   }
 
-  private async validateToppings(
+  async validateToppings(
     restaurantId: string,
     toppingIds: string[],
   ): Promise<void> {

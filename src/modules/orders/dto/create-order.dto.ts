@@ -9,6 +9,14 @@ export class CreateOrderDto {
   pizzaId: string;
 
   @ApiProperty({
+    example: '507f1f77bcf86cd799439011',
+    description: 'Restaurant ID',
+  })
+  @IsNotEmpty({ message: 'restaurantId is required' })
+  @IsString({ message: 'restaurantId must be a string' })
+  restaurantId: string;
+
+  @ApiProperty({
     example: ['507f1f77bcf86cd799439011', '507f1f77bcf86cd799439012'],
     description: 'Additional topping IDs',
     required: false,

@@ -14,5 +14,6 @@ import { ToppingsModule } from '../toppings/toppings.module';
   ],
   providers: [OrdersService],
   controllers: [OrdersController],
+  exports: [OrdersService],
 })
 export class OrdersModule {}

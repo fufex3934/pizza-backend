@@ -37,4 +37,12 @@ export class CreateOrderDto {
   @IsNotEmpty({ message: 'phoneNumber is required' })
   @Validate(IsValidPhoneNumber)
   phoneNumber: string;
+
+  @ApiProperty({
+    example: '507f1f77bcf86cd799439099',
+    description: 'User ID',
+    required: false,
+  })
+  @IsString()
+  userId?: string;
 }

@@ -12,6 +12,7 @@ import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
 import { RolesGuard } from './common/guards/roles.guard';
 import { PizzasModule } from './modules/pizzas/pizzas.module';
 import { ToppingsModule } from './modules/toppings/toppings.module';
+import { OrdersModule } from './modules/orders/orders.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { ToppingsModule } from './modules/toppings/toppings.module';
     RestaurantsModule,
     PizzasModule,
     ToppingsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [

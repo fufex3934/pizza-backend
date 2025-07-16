@@ -11,6 +11,7 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
 import { RolesGuard } from './common/guards/roles.guard';
 import { PizzasModule } from './modules/pizzas/pizzas.module';
+import { ToppingsModule } from './modules/toppings/toppings.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { PizzasModule } from './modules/pizzas/pizzas.module';
     UsersModule,
     RestaurantsModule,
     PizzasModule,
+    ToppingsModule,
   ],
   controllers: [AppController],
   providers: [

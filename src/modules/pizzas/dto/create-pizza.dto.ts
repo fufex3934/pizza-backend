@@ -46,4 +46,7 @@ export class CreatePizzaDto {
   })
   @IsString()
   image?: string;
+
+  @ApiProperty({ example: '60c72b2f9b1d8b3a1c8e4f66', required: false })
+  restaurantId?: string;
 }

@@ -13,6 +13,7 @@ import { RolesGuard } from './common/guards/roles.guard';
 import { PizzasModule } from './modules/pizzas/pizzas.module';
 import { ToppingsModule } from './modules/toppings/toppings.module';
 import { OrdersModule } from './modules/orders/orders.module';
+import { RolesModule } from './modules/roles/roles.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { OrdersModule } from './modules/orders/orders.module';
     PizzasModule,
     ToppingsModule,
     OrdersModule,
+    RolesModule,
   ],
   controllers: [AppController],
   providers: [

@@ -14,4 +14,10 @@ export class CreateRoleDto {
   @IsNotEmpty()
   @IsObject()
   permissions: Record<string, boolean>;
+
+  @ApiProperty({
+    example: '507f1f77bcf86cd799439011',
+    description: 'Restaurant ID',
+  })
+  restaurantId: string;
 }

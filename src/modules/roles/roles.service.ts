@@ -19,7 +19,7 @@ export class RolesService {
   async create(createRoleDto: CreateRoleDto): Promise<Role> {
     const existingRole = await this.roleModel.findOne({
       name: createRoleDto.name,
-      restaurantId: createRoleDto.permissions,
+      restaurantId: createRoleDto.restaurantId,
     });
 
     if (existingRole) {
